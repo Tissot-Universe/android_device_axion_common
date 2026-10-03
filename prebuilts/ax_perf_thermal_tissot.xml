@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPDX-FileCopyrightText: AxionOS
+  SPDX-License-Identifier: Apache-2.0
+
+  Performance/Thermal configuration - Xiaomi Mi A1 (tissot)
+  Qualcomm Snapdragon 625 (msm8953)
+-->
+<perf-config>
+    <atmc>
+        <cpu_levels>
+            <level id="1" little="0,2016000" big="0,2016000"/>
+            <level id="2" little="0,1958400" big="0,1958400"/>
+            <level id="3" little="0,1804800" big="0,1804800"/>
+            <level id="4" little="0,1689600" big="0,1689600"/>
+            <level id="5" little="0,1401600" big="0,1401600"/>
+            <level id="6" little="0,1036800" big="0,1036800"/>
+            <level id="7" little="0,652800" big="0,652800"/>
+        </cpu_levels>
+
+        <gpu_levels>
+            <level id="1" min="650" max="650"/>
+            <level id="2" min="560" max="560"/>
+            <level id="3" min="510" max="510"/>
+            <level id="4" min="400" max="400"/>
+            <level id="5" min="320" max="320"/>
+            <level id="6" min="216" max="216"/>
+            <level id="7" min="133" max="133"/>
+        </gpu_levels>
+
+        <scenes>
+            <scene name="default_scene">
+                <level id="4">
+                    <action unit="cpu" status="4"/>
+                </level>
+                <level id="8">
+                    <action unit="cpu" status="7"/>
+                    <action unit="bg_killer" status="1"/>
+                </level>
+                <level id="10">
+                    <action unit="cpu" status="7"/>
+                    <action unit="bg_killer" status="3"/>
+                </level>
+            </scene>
+
+            <scene name="game">
+                <level id="4">
+                    <action unit="cpu" status="2"/>
+                    <action unit="gpu" status="2"/>
+                </level>
+                <level id="8">
+                    <action unit="cpu" status="5"/>
+                    <action unit="gpu" status="3"/>
+                </level>
+                <level id="10">
+                    <action unit="cpu" status="7"/>
+                    <action unit="gpu" status="5"/>
+                </level>
+            </scene>
+
+            <scene name="heating_fgs">
+                <level id="6">
+                    <action unit="cpu" status="7"/>
+                </level>
+                <level id="10">
+                    <action unit="cpu" status="7"/>
+                </level>
+            </scene>
+
+            <scene name="axcamera_photo_preview">
+                <level id="6">
+                    <action unit="cpu" status="5"/>
+                </level>
+                <level id="9">
+                    <action unit="cpu" status="7"/>
+                </level>
+            </scene>
+        </scenes>
+    </atmc>
+</perf-config>

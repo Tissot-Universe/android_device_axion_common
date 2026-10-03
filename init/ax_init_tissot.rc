@@ -1,0 +1,20 @@
+#
+# Copyright (C) 2026 AxionOS
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on post-fs-data
+    # MSM8953 cpufreq policy
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
+
+    # Adreno 506 GPU
+    chown system system /sys/class/kgsl/kgsl-3d0/min_clock_mhz
+    chown system system /sys/class/kgsl/kgsl-3d0/max_clock_mhz
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/min_clock_mhz
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/max_clock_mhz
